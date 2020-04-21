@@ -85,6 +85,14 @@
                 },
                 "name": "default"
             }
+        },
+        "sketch_table": {
+            "default_rule": {
+                "action": {
+                    "type": "sketch_action"
+                },
+                "name": "default"
+            }
         }
     }
 }

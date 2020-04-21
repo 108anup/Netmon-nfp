@@ -14,7 +14,8 @@ uint32_t hash_func1(uint32_t srcAddr, uint32_t dstAddr)
 }
 
 // __declspec(emem export scope(global))
-__export __mem int32_t sketch[NUM_ROWS][NUM_COLS];
+// __export __mem
+__declspec(imem export scope(global)) int32_t sketch[NUM_ROWS][NUM_COLS];
 int pif_plugin_cms_update(EXTRACTED_HEADERS_T *headers, ACTION_DATA_T *action_data){
 
     __xread uint32_t in_xfer_sketch;

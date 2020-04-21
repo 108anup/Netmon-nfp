@@ -12,12 +12,12 @@ if [[ -e ./sandbox.c ]]; then
     SANDBOX="--sandbox-c sandbox.c"
 fi
 
-set -x
+# set -x
 nfp4build --output-nffw-filename ./out/app.nffw \
           --incl-p4-build ./main.p4 \
           --sku AMDA0081-0001:0 \
           --platform hydrogen \
-          --no-reduced-thread-usage \
+          --reduced-thread-usage \
           --no-shared-codestore \
           --disable-component gro \
           --no-debug-info \
@@ -31,4 +31,4 @@ nfp4build --output-nffw-filename ./out/app.nffw \
           --nfp4c_p4_compiler hlir \
           $SANDBOX
           # --nfirc_no_mac_ingress_timestamp
-set +x
+# set +x
