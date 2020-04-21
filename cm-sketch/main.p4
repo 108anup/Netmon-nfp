@@ -20,7 +20,19 @@ table forward {
     }
 }
 
+primitive_action cms_update();
+action sketch_action() {
+    cms_update();
+}
+
+table sketch_table {
+    actions {
+        sketch_action;
+    }
+}
+
 control ingress {
+    apply(sketch_table);
     apply(forward);
 }
 
