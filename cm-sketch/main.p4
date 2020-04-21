@@ -20,9 +20,13 @@ table forward {
     }
 }
 
-primitive_action cms_update();
+primitive_action cms_update0();
+primitive_action cms_update1();
+primitive_action cms_update2();
 action sketch_action() {
-    cms_update();
+    cms_update0();
+    cms_update1();
+    cms_update2();
 }
 
 table sketch_table {
