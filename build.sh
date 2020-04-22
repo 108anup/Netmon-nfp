@@ -18,7 +18,7 @@ nfp4build --output-nffw-filename ./out/app.nffw \
           --sku AMDA0081-0001:0 \
           --platform hydrogen \
           --reduced-thread-usage \
-          --no-shared-codestore \
+          --shared-codestore \
           --disable-component gro \
           --no-debug-info \
           --nfp4c_p4_version 1.0 \
