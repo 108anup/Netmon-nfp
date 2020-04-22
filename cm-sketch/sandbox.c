@@ -27,9 +27,10 @@ uint32_t hash_func2(uint32_t srcAddr, uint32_t dstAddr)
 // __export __mem
 __declspec(emem export scope(global)) int32_t sketch[NUM_ROWS][NUM_COLS];
 
-#define UPDATE_ROW(ROW_NUM, HASH_NUM)                                            \
-    int pif_plugin_cms_update##ROW_NUM(EXTRACTED_HEADERS_T *headers,    \
-                                       ACTION_DATA_T *action_data)      \
+#define UPDATE_ROW(ROW_NUM, HASH_NUM)                                   \
+    int pif_plugin_cms_update_##ROW_NUM##_##HASH_NUM(                   \
+        EXTRACTED_HEADERS_T *headers,                                   \
+        ACTION_DATA_T *action_data)                                     \
     {                                                                   \
                                                                         \
         __xread uint32_t in_xfer_sketch;                                \

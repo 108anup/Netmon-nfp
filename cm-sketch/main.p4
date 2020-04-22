@@ -20,6 +20,7 @@ table forward {
     }
 }
 
+// sketch block start
 primitive_action cms_update0();
 primitive_action cms_update1();
 primitive_action cms_update2();
@@ -28,6 +29,7 @@ action sketch_action() {
     cms_update1();
     cms_update2();
 }
+// sketch block end
 
 table sketch_table {
     actions {
