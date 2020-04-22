@@ -5,7 +5,7 @@
 #include "pif_plugin.h"
 
 #define NUM_ROWS 3
-#define NUM_COLS 3072
+#define NUM_COLS 1024
 #define SKETCH_COLUMN_COUNT_MASK 1023
 
 uint32_t hash_func0(uint32_t srcAddr, uint32_t dstAddr)
@@ -27,7 +27,7 @@ uint32_t hash_func2(uint32_t srcAddr, uint32_t dstAddr)
 // __export __mem
 __declspec(emem export scope(global)) int32_t sketch[NUM_ROWS][NUM_COLS];
 
-#define UPDATE_ROW(ROW_NUM)                                             \
+#define UPDATE_ROW(ROW_NUM, HASH_NUM)                                            \
     int pif_plugin_cms_update##ROW_NUM(EXTRACTED_HEADERS_T *headers,    \
                                        ACTION_DATA_T *action_data)      \
     {                                                                   \
@@ -41,7 +41,7 @@ __declspec(emem export scope(global)) int32_t sketch[NUM_ROWS][NUM_COLS];
             headers);                                                   \
         uint32_t srcAddr = PIF_HEADER_GET_ipv4___srcAddr(ipv4_header);  \
         uint32_t dstAddr = PIF_HEADER_GET_ipv4___dstAddr(ipv4_header);  \
-        uint32_t hv = hash_func##ROW_NUM(srcAddr, dstAddr);             \
+        uint32_t hv = hash_func##HASH_NUM(srcAddr, dstAddr);            \
                                                                         \
         mem_read_atomic(&in_xfer_sketch,                                \
                         &sketch[ROW_NUM][hv], sizeof(uint32_t));        \
@@ -54,8 +54,8 @@ __declspec(emem export scope(global)) int32_t sketch[NUM_ROWS][NUM_COLS];
         return PIF_PLUGIN_RETURN_FORWARD;                               \
     }                                                                   \
 
-UPDATE_ROW(0)
-UPDATE_ROW(1)
-UPDATE_ROW(2)
+UPDATE_ROW(0, 0)
+UPDATE_ROW(1, 1)
+UPDATE_ROW(2, 2)
 
 //PIF_PLUGIN_HDR_T *pif_plugin_hdr_get_HDR(EXTRACTED_HEADERS_T *headers)
