@@ -10,17 +10,17 @@
 
 uint32_t hash_func0(uint32_t srcAddr, uint32_t dstAddr)
 {
-	return (srcAddr ^ dstAddr) & SKETCH_COLUMN_COUNT_MASK; // % NUM_COLS; //& SKETCH_COLUMN_COUNT_MASK;
+	return (srcAddr ^ dstAddr) % NUM_COLS; //& SKETCH_COLUMN_COUNT_MASK;
 }
 
 uint32_t hash_func1(uint32_t srcAddr, uint32_t dstAddr)
 {
-	return (srcAddr | dstAddr) & SKETCH_COLUMN_COUNT_MASK; // % NUM_COLS; //& SKETCH_COLUMN_COUNT_MASK;
+	return (srcAddr | dstAddr) % NUM_COLS; //& SKETCH_COLUMN_COUNT_MASK;
 }
 
 uint32_t hash_func2(uint32_t srcAddr, uint32_t dstAddr)
 {
-	return (srcAddr & dstAddr) & SKETCH_COLUMN_COUNT_MASK; // % NUM_COLS; //& SKETCH_COLUMN_COUNT_MASK;
+	return (srcAddr & dstAddr) % NUM_COLS; //& SKETCH_COLUMN_COUNT_MASK;
 }
 
 // __declspec(emem export scope(global))
