@@ -45,7 +45,7 @@ for r in ${rows[@]}; do
              -c 0x5555 \
              -w 0000:05:08.0 -w 0000:05:08.1 -w 0000:05:08.2 -w 0000:05:08.3 \
              --socket-mem "256,256" --log-level=8 -- -p 0xF \
-             > "runs/${rows}_${c}.log" 2>&1 &
+             > "runs/${r}_${c}.log" 2>&1 &
         pid=$!
 
         echo "Running dpdk-receiver with pid: $pid"

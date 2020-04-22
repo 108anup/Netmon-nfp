@@ -9,7 +9,7 @@ sandbox.close()
 
 new_lines = []
 for line in lines:
-    if ("UPDATE_ROW" not in line):
+    if (line[:10] != "UPDATE_ROW"):
         new_lines.append(line)
 
 for r in range(rows):
@@ -26,7 +26,7 @@ lines = p4.readlines()
 p4.close()
 
 actions = ["cms_update_{}_{}();".format(r, r % 3)
-                for r in range(rows)]
+           for r in range(rows)]
 sketch_block = (["primitive_action {}\n".format(x) for x in actions] +
                 ["action sketch_action() {\n"] +
                 ["    {}\n".format(x) for x in actions] +

@@ -4,8 +4,8 @@
 #include <pif_common.h>
 #include "pif_plugin.h"
 
-#define NUM_ROWS 3
-#define NUM_COLS 1024
+#define NUM_ROWS 4
+#define NUM_COLS 2048
 #define SKETCH_COLUMN_COUNT_MASK 1023
 
 uint32_t hash_func0(uint32_t srcAddr, uint32_t dstAddr)
@@ -55,8 +55,9 @@ __declspec(emem export scope(global)) int32_t sketch[NUM_ROWS][NUM_COLS];
         return PIF_PLUGIN_RETURN_FORWARD;                               \
     }                                                                   \
 
+
+//PIF_PLUGIN_HDR_T *pif_plugin_hdr_get_HDR(EXTRACTED_HEADERS_T *headers)
 UPDATE_ROW(0, 0)
 UPDATE_ROW(1, 1)
 UPDATE_ROW(2, 2)
-
-//PIF_PLUGIN_HDR_T *pif_plugin_hdr_get_HDR(EXTRACTED_HEADERS_T *headers)
+UPDATE_ROW(3, 0)

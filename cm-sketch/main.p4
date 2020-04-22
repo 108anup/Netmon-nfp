@@ -21,13 +21,15 @@ table forward {
 }
 
 // sketch block start
-primitive_action cms_update0();
-primitive_action cms_update1();
-primitive_action cms_update2();
+primitive_action cms_update_0_0();
+primitive_action cms_update_1_1();
+primitive_action cms_update_2_2();
+primitive_action cms_update_3_0();
 action sketch_action() {
-    cms_update0();
-    cms_update1();
-    cms_update2();
+    cms_update_0_0();
+    cms_update_1_1();
+    cms_update_2_2();
+    cms_update_3_0();
 }
 // sketch block end
 
