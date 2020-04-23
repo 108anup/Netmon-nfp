@@ -47,7 +47,7 @@ atomic_add(volatile __declspec(mem addr40) void  *addr, int x)
 
 // __declspec(emem export scope(global))
 // __export __mem
-__declspec(emem export scope(global)) int32_t sketch[NUM_ROWS][NUM_COLS];
+__declspec(imem export scope(global)) int32_t sketch[NUM_ROWS][NUM_COLS];
 
 #define UPDATE_ROW(ROW_NUM, HASH_NUM)                                   \
     int pif_plugin_cms_update_##ROW_NUM##_##HASH_NUM(                   \
