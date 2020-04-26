@@ -17,16 +17,16 @@ Lcore 2: RX port 1
 Lcore 4: RX port 2
 Lcore 6: RX port 3
 Initializing port 0... done: 
-Port 0, MAC address: 22:BD:F2:1C:4E:D6
+Port 0, MAC address: 1E:CA:4E:39:6C:33
 
 Initializing port 1... done: 
-Port 1, MAC address: F2:F9:CD:4F:EA:C7
+Port 1, MAC address: 82:2A:C1:72:6D:2A
 
 Initializing port 2... done: 
-Port 2, MAC address: 52:DB:BA:2A:B0:A7
+Port 2, MAC address: 96:6B:8F:50:37:28
 
 Initializing port 3... done: 
-Port 3, MAC address: 0E:14:91:72:49:CF
+Port 3, MAC address: 26:ED:12:08:74:C7
 
 
 Checking link statusdone
@@ -37,12 +37,13 @@ Port3 Link Up. Speed 0 Mbps - full-duplex
 L2FWD: entering main loop on lcore 2
 L2FWD:  -- lcoreid=2 portid=1
 L2FWD: entering main loop on lcore 4
-L2FWD:  -- lcoreid=4 portid=2
-L2FWD: lcore 10 has nothing to do
-L2FWD: lcore 12 has nothing to do
-L2FWD: lcore 14 has nothing to do
 L2FWD: entering main loop on lcore 6
 L2FWD:  -- lcoreid=6 portid=3
+L2FWD: lcore 10 has nothing to do
+L2FWD:  -- lcoreid=4 portid=2
+L2FWD: lcore 8 has nothing to do
+L2FWD: lcore 12 has nothing to do
+L2FWD: lcore 14 has nothing to do
 L2FWD: entering main loop on lcore 0
 L2FWD:  -- lcoreid=0 portid=0
 [2J[1;1H
@@ -56,146 +57,145 @@ RX rate:                             0
 Drop rate:                           0
 Statistics for port 1 ------------------------------
 Packets sent:                        0
-Packets received:                 3083
+Packets received:                12433
 Packets dropped:                     0
 TX rate:                             0
-RX rate:                           309
+RX rate:                          1244
 Drop rate:                           0
 Statistics for port 2 ------------------------------
 Packets sent:                        0
-Packets received:                 2581
+Packets received:                11269
 Packets dropped:                     0
 TX rate:                             0
-RX rate:                           258
+RX rate:                          1127
 Drop rate:                           0
 Statistics for port 3 ------------------------------
 Packets sent:                        0
-Packets received:                  928
+Packets received:                11959
 Packets dropped:                     0
 TX rate:                             0
-RX rate:                            96
+RX rate:                          1195
 Drop rate:                           0
 Aggregate statistics ===============================
 Total packets sent:                  0
-Total packets received:           6641
+Total packets received:          35685
 Total packets dropped:               0
 Total TX rate:                       0
-Total RX rate:                     663
-Total drop rate:                     0
-====================================================
-L2FWD: lcore 8 has nothing to do
-[2J[1;1H
-Port statistics ====================================
-Statistics for port 0 ------------------------------
-Packets sent:                        0
-Packets received:             69277686
-Packets dropped:                     0
-TX rate:                             0
-RX rate:                       6927768
-Drop rate:                           0
-Statistics for port 1 ------------------------------
-Packets sent:                        0
-Packets received:             69279916
-Packets dropped:                     0
-TX rate:                             0
-RX rate:                       6927682
-Drop rate:                           0
-Statistics for port 2 ------------------------------
-Packets sent:                        0
-Packets received:             68583214
-Packets dropped:                     0
-TX rate:                             0
-RX rate:                       6858063
-Drop rate:                           0
-Statistics for port 3 ------------------------------
-Packets sent:                        0
-Packets received:             68581776
-Packets dropped:                     0
-TX rate:                             0
-RX rate:                       6858081
-Drop rate:                           0
-Aggregate statistics ===============================
-Total packets sent:                  0
-Total packets received:      275722606
-Total packets dropped:               0
-Total TX rate:                       0
-Total RX rate:                27571594
+Total RX rate:                    3566
 Total drop rate:                     0
 ====================================================
 [2J[1;1H
 Port statistics ====================================
 Statistics for port 0 ------------------------------
 Packets sent:                        0
-Packets received:            138553570
+Packets received:             68925654
 Packets dropped:                     0
 TX rate:                             0
-RX rate:                       6927588
+RX rate:                       6892565
 Drop rate:                           0
 Statistics for port 1 ------------------------------
 Packets sent:                        0
-Packets received:            138555831
+Packets received:             68937231
 Packets dropped:                     0
 TX rate:                             0
-RX rate:                       6927591
+RX rate:                       6892480
 Drop rate:                           0
 Statistics for port 2 ------------------------------
 Packets sent:                        0
-Packets received:            137162853
+Packets received:             68936040
 Packets dropped:                     0
 TX rate:                             0
-RX rate:                       6857963
+RX rate:                       6892477
 Drop rate:                           0
 Statistics for port 3 ------------------------------
 Packets sent:                        0
-Packets received:            137161402
+Packets received:             68936754
 Packets dropped:                     0
 TX rate:                             0
-RX rate:                       6857962
+RX rate:                       6892479
 Drop rate:                           0
 Aggregate statistics ===============================
 Total packets sent:                  0
-Total packets received:      551433686
+Total packets received:      275735704
 Total packets dropped:               0
 Total TX rate:                       0
-Total RX rate:                27571104
+Total RX rate:                27570001
 Total drop rate:                     0
 ====================================================
 [2J[1;1H
 Port statistics ====================================
 Statistics for port 0 ------------------------------
 Packets sent:                        0
-Packets received:            207828004
+Packets received:            137840839
 Packets dropped:                     0
 TX rate:                             0
-RX rate:                       6927443
+RX rate:                       6891518
 Drop rate:                           0
 Statistics for port 1 ------------------------------
 Packets sent:                        0
-Packets received:            207830278
+Packets received:            137852348
 Packets dropped:                     0
 TX rate:                             0
-RX rate:                       6927444
+RX rate:                       6891511
 Drop rate:                           0
 Statistics for port 2 ------------------------------
 Packets sent:                        0
-Packets received:            205741069
+Packets received:            137851203
 Packets dropped:                     0
 TX rate:                             0
-RX rate:                       6857821
+RX rate:                       6891514
 Drop rate:                           0
 Statistics for port 3 ------------------------------
 Packets sent:                        0
-Packets received:            205739620
+Packets received:            137851862
 Packets dropped:                     0
 TX rate:                             0
-RX rate:                       6857823
+RX rate:                       6891510
 Drop rate:                           0
 Aggregate statistics ===============================
 Total packets sent:                  0
-Total packets received:      827138994
+Total packets received:      551396263
 Total packets dropped:               0
 Total TX rate:                       0
-Total RX rate:                27570531
+Total RX rate:                27566053
+Total drop rate:                     0
+====================================================
+[2J[1;1H
+Port statistics ====================================
+Statistics for port 0 ------------------------------
+Packets sent:                        0
+Packets received:            206740736
+Packets dropped:                     0
+TX rate:                             0
+RX rate:                       6889989
+Drop rate:                           0
+Statistics for port 1 ------------------------------
+Packets sent:                        0
+Packets received:            206752269
+Packets dropped:                     0
+TX rate:                             0
+RX rate:                       6889991
+Drop rate:                           0
+Statistics for port 2 ------------------------------
+Packets sent:                        0
+Packets received:            206751122
+Packets dropped:                     0
+TX rate:                             0
+RX rate:                       6889991
+Drop rate:                           0
+Statistics for port 3 ------------------------------
+Packets sent:                        0
+Packets received:            206751769
+Packets dropped:                     0
+TX rate:                             0
+RX rate:                       6889990
+Drop rate:                           0
+Aggregate statistics ===============================
+Total packets sent:                  0
+Total packets received:      826995909
+Total packets dropped:               0
+Total TX rate:                       0
+Total RX rate:                27559961
 Total drop rate:                     0
 ====================================================
 
