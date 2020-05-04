@@ -32,6 +32,7 @@ primitive_action cms_update_7_1();
 primitive_action cms_update_8_2();
 primitive_action cms_update_9_0();
 primitive_action cms_update_10_1();
+primitive_action cms_update_11_2();
 action sketch_action() {
     cms_update_0_0();
     cms_update_1_1();
@@ -44,6 +45,7 @@ action sketch_action() {
     cms_update_8_2();
     cms_update_9_0();
     cms_update_10_1();
+    cms_update_11_2();
 }
 // sketch block end
 
