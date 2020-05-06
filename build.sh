@@ -12,6 +12,11 @@ if [[ -e ./sandbox.c ]]; then
     SANDBOX="--sandbox-c sandbox.c"
 fi
 
+A=""
+if [[ -n $2 ]]; then
+    A="-A $2"
+fi
+
 # set -x
 nfp4build --output-nffw-filename ./out/app.nffw \
           --incl-p4-build ./main.p4 \
@@ -29,6 +34,6 @@ nfp4build --output-nffw-filename ./out/app.nffw \
           --nfirc_multicast_group_count 00 \
           --nfirc_multicast_group_size 16 \
           --nfp4c_p4_compiler hlir \
-          $SANDBOX
+          $SANDBOX $A
           # --nfirc_no_mac_ingress_timestamp
 # set +x
