@@ -13,5 +13,7 @@ for (dirpath, dirs, files) in os.walk('runs'):
         s = f.read()
         f.close()
         # print(s)
-        rate = pattern.findall(s)[-1]
+        flist = pattern.findall(s)
+        # print(fname, flist)
+        rate = flist[-1]
         print("{}, {}, {}".format(rows, cols, rate))
