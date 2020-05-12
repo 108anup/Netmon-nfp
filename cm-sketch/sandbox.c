@@ -1,6 +1,6 @@
 #include "sandbox.h"
 
-#define NUM_COLS_0 4
+#define NUM_COLS_0 1048576
 #define NUM_ROWS_0 12
 
 __declspec(emem export scope(global)) int32_t sketch_0[NUM_ROWS_0][NUM_COLS_0];
