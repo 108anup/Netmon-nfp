@@ -1,0 +1,72 @@
+- sketches:
+  - cols: 4
+    frac: 1
+    rows: 1
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 4
+    frac: 1
+    rows: 2
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 4
+    frac: 1
+    rows: 3
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 4
+    frac: 1
+    rows: 4
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 4
+    frac: 1
+    rows: 5
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 4
+    frac: 1
+    rows: 6
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 4
+    frac: 1
+    rows: 7
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 4
+    frac: 1
+    rows: 8
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 4
+    frac: 1
+    rows: 9
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 4
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 4
+    frac: 1
+    rows: 11
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 4
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1

@@ -22,22 +22,8 @@ table forward {
 
 // sketch block start
 primitive_action cms_update_0_0();
-primitive_action cms_update_0_1();
-primitive_action cms_update_0_2();
-primitive_action cms_update_0_3();
-primitive_action cms_update_1_0();
-primitive_action cms_update_1_1();
-primitive_action cms_update_1_2();
-primitive_action cms_update_1_3();
 action sketch_action() {
     cms_update_0_0();
-    cms_update_0_1();
-    cms_update_0_2();
-    cms_update_0_3();
-    cms_update_1_0();
-    cms_update_1_1();
-    cms_update_1_2();
-    cms_update_1_3();
 }
 // sketch block end
 

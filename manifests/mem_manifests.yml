@@ -1,0 +1,276 @@
+- sketches:
+  - cols: 1
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 2
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 4
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 8
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 16
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 32
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 64
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 128
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 256
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 512
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 1024
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 2048
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 4096
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 8192
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 16384
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 32768
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 65536
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 131072
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 262144
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 524288
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 1048576
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 2097152
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 4194304
+    frac: 1
+    rows: 10
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 1
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 2
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 4
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 8
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 16
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 32
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 64
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 128
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 256
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 512
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 1024
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 2048
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 4096
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 8192
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 16384
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 32768
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 65536
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 131072
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 262144
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 524288
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 1048576
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 2097152
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 4194304
+    frac: 1
+    rows: 12
+    thr: 1
+  total_thr: 1

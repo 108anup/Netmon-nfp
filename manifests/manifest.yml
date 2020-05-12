@@ -1,8 +1,10 @@
 sketches:
 - cols: 32768
+  frac: 1
   rows: 4
   thr: 1
 - cols: 32768
+  frac: 1
   rows: 4
   thr: 1
 total_thr: 2

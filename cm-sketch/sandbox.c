@@ -1,28 +1,10 @@
 #include "sandbox.h"
 
-#define NUM_COLS_0 32768
-#define NUM_COLS_1 32768
-#define NUM_ROWS_0 4
-#define NUM_ROWS_1 4
+#define NUM_COLS_0 4
+#define NUM_ROWS_0 1
 
 __declspec(emem export scope(global)) int32_t sketch_0[NUM_ROWS_0][NUM_COLS_0];
-__declspec(emem export scope(global)) int32_t sketch_1[NUM_ROWS_1][NUM_COLS_1];
 
 HASH_FUNC0(0, NUM_COLS_0)
-HASH_FUNC1(0, NUM_COLS_0)
-HASH_FUNC2(0, NUM_COLS_0)
-HASH_FUNC3(0, NUM_COLS_0)
+UPDATE_ROW(0, 0, 0, 65535)
 
-HASH_FUNC0(1, NUM_COLS_1)
-HASH_FUNC1(1, NUM_COLS_1)
-HASH_FUNC2(1, NUM_COLS_1)
-HASH_FUNC3(1, NUM_COLS_1)
-
-UPDATE_ROW(0, 0, 0, 32768)
-UPDATE_ROW(0, 1, 0, 32768)
-UPDATE_ROW(0, 2, 0, 32768)
-UPDATE_ROW(0, 3, 0, 32768)
-UPDATE_ROW(1, 0, 0, 32768)
-UPDATE_ROW(1, 1, 0, 32768)
-UPDATE_ROW(1, 2, 0, 32768)
-UPDATE_ROW(1, 3, 0, 32768)
