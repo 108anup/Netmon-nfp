@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -m
+set -e
+
 manifest_name=$2
 me=$1
 
@@ -16,4 +19,7 @@ pid=$!
 echo "Running dpdk-receiver with pid: $pid"
 
 sleep 40
-sudo killall l2fwd
+sudo kill $pid
+
+set +e
+set +m
