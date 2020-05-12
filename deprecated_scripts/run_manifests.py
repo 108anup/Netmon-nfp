@@ -11,6 +11,7 @@ def run_experiment(name):
     run_script = os.path.join(cwd, 'run_experiment.sh')
     with open('run.log', 'w') as f:
         subprocess.call([run_script, '54', name], stdout=f, stderr=f)
+
     rate = int(get_rate(os.path.join('./runs', name + '.log')))
     # if(rate == -1):
     #    return run_experiment(name)

@@ -5,7 +5,7 @@ echo "    Setting up kmod"
 echo "==================================="
 
 # from ~/tools/functions.bash
-load_igb_uio_module
+# load_igb_uio_module
 
 sudo modprobe -r nfp
 sudo modprobe nfp nfp_dev_cpp=1 nfp_pf_netdev=0

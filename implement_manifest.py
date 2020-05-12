@@ -80,4 +80,8 @@ if(__name__ == '__main__'):
     with open(manifest_file) as f:
         manifest = yaml.safe_load(f)
 
-    implement_manifest(manifest)
+    if(len(sys.argv) > 2):
+        manifest_id = int(sys.argv[2]) - 1
+        implement_manifest(manifest[manifest_id])
+    else:
+        implement_manifest(manifest)

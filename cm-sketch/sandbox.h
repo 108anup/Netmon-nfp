@@ -34,6 +34,60 @@
         return (a | b) % NUM_COLS;                          \
     }                                                       \
 
+#define HASH_FUNC4(SK_NUM, NUM_COLS)                        \
+    uint32_t hash_func4_##SK_NUM(uint32_t a, uint32_t b)    \
+    {                                                       \
+        return a % NUM_COLS;                                \
+    }                                                       \
+
+
+#define HASH_FUNC5(SK_NUM, NUM_COLS)                        \
+    uint32_t hash_func5_##SK_NUM(uint32_t a, uint32_t b)    \
+    {                                                       \
+        return b % NUM_COLS;                                \
+    }                                                       \
+
+
+#define HASH_FUNC6(SK_NUM, NUM_COLS)                        \
+    uint32_t hash_func6_##SK_NUM(uint32_t a, uint32_t b)    \
+    {                                                       \
+        return (a & b) % NUM_COLS;                          \
+    }                                                       \
+
+
+#define HASH_FUNC7(SK_NUM, NUM_COLS)                        \
+    uint32_t hash_func7_##SK_NUM(uint32_t a, uint32_t b)    \
+    {                                                       \
+        return (a | b) % NUM_COLS;                          \
+    }                                                       \
+
+#define HASH_FUNC8(SK_NUM, NUM_COLS)                        \
+    uint32_t hash_func8_##SK_NUM(uint32_t a, uint32_t b)    \
+    {                                                       \
+        return a % NUM_COLS;                                \
+    }                                                       \
+
+
+#define HASH_FUNC9(SK_NUM, NUM_COLS)                        \
+    uint32_t hash_func9_##SK_NUM(uint32_t a, uint32_t b)    \
+    {                                                       \
+        return b % NUM_COLS;                                \
+    }                                                       \
+
+
+#define HASH_FUNC10(SK_NUM, NUM_COLS)                       \
+    uint32_t hash_func10_##SK_NUM(uint32_t a, uint32_t b)   \
+    {                                                       \
+        return (a & b) % NUM_COLS;                          \
+    }                                                       \
+
+
+#define HASH_FUNC11(SK_NUM, NUM_COLS)                       \
+    uint32_t hash_func11_##SK_NUM(uint32_t a, uint32_t b)   \
+    {                                                       \
+        return (a | b) % NUM_COLS;                          \
+    }                                                       \
+
 __intrinsic void
 atomic_add(volatile __declspec(mem addr40) void  *addr, int x)
 {
