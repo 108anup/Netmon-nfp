@@ -29,10 +29,6 @@ primitive_action cms_update_0_4();
 primitive_action cms_update_0_5();
 primitive_action cms_update_0_6();
 primitive_action cms_update_0_7();
-primitive_action cms_update_0_8();
-primitive_action cms_update_0_9();
-primitive_action cms_update_0_10();
-primitive_action cms_update_0_11();
 action sketch_action() {
     cms_update_0_0();
     cms_update_0_1();
@@ -42,10 +38,6 @@ action sketch_action() {
     cms_update_0_5();
     cms_update_0_6();
     cms_update_0_7();
-    cms_update_0_8();
-    cms_update_0_9();
-    cms_update_0_10();
-    cms_update_0_11();
 }
 // sketch block end
 

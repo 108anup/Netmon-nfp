@@ -50,7 +50,23 @@ mem_bench = [
     for logc in range(23)
 ]
 
+ground_truth = [
+    {
+        'sketches': [
+            {
+                'rows': r,
+                'cols': 4**logc,
+                'thr': 1,
+                'frac': 1
+            }
+        ],
+        'total_thr': 1
+    }
+    for r in range(2, 10, 2)
+    for logc in range(2, 12)
+]
+
 # double_sketches = {
 # }
 
-yaml.dump(hash_bench, sys.stdout)
+yaml.dump(ground_truth, sys.stdout)

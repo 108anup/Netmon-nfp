@@ -24,7 +24,7 @@ ground_truth_path = os.path.join('./runs', manifests_file_name)
 
 idx = 1
 for num, manifest in enumerate(manifests):
-    print("{}: ".format(idx), end="")
+    # print("{}: ".format(idx), end="")
     try:
         name = manifests_file_name + "_{}.log".format(num+1)
         rate = int(get_rate(os.path.join(ground_truth_path, name)))
