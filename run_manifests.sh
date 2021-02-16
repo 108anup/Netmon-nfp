@@ -13,8 +13,8 @@ get_manifest_file_name(){
 
 manifests_file=$1
 num_manifests=$(python get_num_manifests.py $1)
-me=36
-manifests_file_name=$(get_manifest_file_name $manifests_file)
+me=20
+manifests_file_name="$(get_manifest_file_name $manifests_file)"
 
 mkdir -p "runs/${manifests_file_name}"
 
@@ -28,7 +28,7 @@ for i in $(seq 1 $num_manifests); do
          -c 0x5555 \
          -w 0000:05:08.0 -w 0000:05:08.1 -w 0000:05:08.2 -w 0000:05:08.3 \
          --socket-mem "256,256" --log-level=8 -- -p 0xF \
-         > "runs/${manifests_file_name}_${me}/${manifests_file_name}_${me}_${i}.log" 2>&1 &
+         > "runs/${manifests_file_name}/${manifests_file_name}_${i}.log" 2>&1 &
     pid=$!
 
     echo "Running dpdk-receiver with pid: $pid"

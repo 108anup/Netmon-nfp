@@ -3,6 +3,12 @@ import sys
 import os
 from build_csv import get_rate
 
+"""
+For now using this as build_csv from manifest and run
+
+Original use case was to have a manifest embedded with ground truth.
+"""
+
 
 # def run_experiment(name):
 #     cwd = os.getcwd()
