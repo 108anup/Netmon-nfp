@@ -15,14 +15,15 @@ manifests_file=$1
 num_manifests=$(python get_num_manifests.py $1)
 me=54
 manifests_file_name="$(get_manifest_file_name $manifests_file)"
+sketch_dir=$2
 
 mkdir -p "runs/${manifests_file_name}"
 
 for i in $(seq 1 $num_manifests); do
-    python implement_manifest.py $1 $i
+    python implement_manifest.py $1 $i $2
 
-    ./build.sh cm-sketch $me
-    ./load.sh cm-sketch
+    ./build.sh $sketch_dir $me
+    ./load.sh $sketch_dir
 
     sudo /users/anup/Netmon/netronome-agilio/dpdk-receiver/build/app/l2fwd \
          -c 0x5555 \

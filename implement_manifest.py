@@ -1,13 +1,47 @@
+import os
 import sys
 import yaml
 import random
 import math
-
+import re
 
 MAX_UB = 65535
 
 
-def implement_manifest(manifest):
+def make_sub(sub_old, sub_new, file_path):
+    with open(file_path, "r") as sources:
+        lines = sources.readlines()
+    with open(file_path, "w") as sources:
+        for line in lines:
+            sources.write(
+                re.sub(sub_old,
+                       sub_new,
+                       line)
+            )
+
+
+def implement_manifest_v2(manifest, sketch_dir):
+    """
+    Not supporting multiple sketches of different types
+    Not supporting LB UB
+    """
+    assert(len(manifest['sketches']) == 1)
+    sk = manifest['sketches'][0]
+    rows = sk['rows']
+    cols = sk['cols']
+    # levels = sk['levels']
+    file_path = os.path.join(sketch_dir, 'sandbox.c')
+
+    sub_new = '#define NUM_COLS {}'.format(cols)
+    sub_old = '#define NUM_COLS [0-9]*'
+    make_sub(sub_old, sub_new, file_path)
+
+    sub_new = '#define NUM_ROWS {}'.format(rows)
+    sub_old = '#define NUM_ROWS [0-9]*'
+    make_sub(sub_old, sub_new, file_path)
+
+
+def implement_manifest_v1(manifest):
     total_thr = manifest['total_thr'] # aggregate thr for device over all flows
     sandbox_lines = [
         '#include "sandbox.h"\n\n'
@@ -82,6 +116,8 @@ if(__name__ == '__main__'):
 
     if(len(sys.argv) > 2):
         manifest_id = int(sys.argv[2]) - 1
-        implement_manifest(manifest[manifest_id])
+        assert(len(sys.argv) > 3)
+        sketch_dir = sys.argv[3]
+        implement_manifest_v2(manifest[manifest_id], sketch_dir)
     else:
-        implement_manifest(manifest)
+        implement_manifest_v1(manifest)
