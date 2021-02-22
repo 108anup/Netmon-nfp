@@ -28,12 +28,7 @@ int pif_plugin_sketch_update(EXTRACTED_HEADERS_T *headers,
     for(uint32_t row = 0; row<NUM_ROWS; row++){
       uint32_t index = compute_hash(srcAddr, NUM_COLS,
                                     index_a[row], index_b[row]);
-      uint32_t filter = compute_hash(srcAddr, NUM_COLS,
-                                     filter_a[row], filter_b[row]);
-      if(filter == 0)
-        atomic_add(&sketch[row][index], 1);
-      else
-        atomic_sub(&sketch[row][index], 1);
+      atomic_add(&sketch[row][index], 1);
     }
   }
 
