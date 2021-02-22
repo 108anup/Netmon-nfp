@@ -13,7 +13,7 @@ get_manifest_file_name(){
 
 manifests_file=$1
 num_manifests=$(python get_num_manifests.py $1)
-me=20
+me=54
 manifests_file_name="$(get_manifest_file_name $manifests_file)"
 
 mkdir -p "runs/${manifests_file_name}"

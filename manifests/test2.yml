@@ -1,0 +1,12 @@
+- sketches:
+  - cols: 1048576
+    frac: 1
+    rows: 8
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 4194304
+    frac: 1
+    rows: 8
+    thr: 1
+  total_thr: 1

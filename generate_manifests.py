@@ -66,7 +66,23 @@ ground_truth = [
     for logc in range(2, 12)
 ]
 
+testing = [
+    {
+        'sketches': [
+            {
+                'rows': 8,
+                'cols': 4**logc,
+                'thr': 1,
+                'frac': 1
+            }
+        ],
+        'total_thr': 1
+    }
+    for logc in range(10, 12)
+]
+
+
 # double_sketches = {
 # }
 
-yaml.dump(ground_truth, sys.stdout)
+yaml.dump(testing, sys.stdout)

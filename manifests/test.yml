@@ -1,0 +1,36 @@
+- sketches:
+  - cols: 256
+    frac: 1
+    rows: 8
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 1024
+    frac: 1
+    rows: 8
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 4096
+    frac: 1
+    rows: 8
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 16384
+    frac: 1
+    rows: 8
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 65536
+    frac: 1
+    rows: 8
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 262144
+    frac: 1
+    rows: 8
+    thr: 1
+  total_thr: 1
