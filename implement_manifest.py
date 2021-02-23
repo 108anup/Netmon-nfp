@@ -133,10 +133,19 @@ def implement_manifest_v3(manifest, sketch_dir):
         # Sandbox
         sandbox_lines.append('#define NUM_COLS_{} {}\n'.format(sk_num, cols))
         sandbox_lines.append('#define NUM_ROWS_{} {}\n\n'.format(sk_num, rows))
-        sandbox_lines.append(
-            '__declspec(emem export scope(global)) '
-            'int32_t sketch_{}[NUM_ROWS_{}][NUM_COLS_{}];\n\n'
-            .format(sk_num, sk_num, sk_num))
+        if(sketch_dir == 'univmon'):
+            sandbox_lines.append('#define NUM_LEVELS_{} {}\n\n'.format(sk_num, rows))
+            sandbox_lines.append(
+                '__declspec(emem export scope(global)) '
+                'int32_t sketch_{}[NUM_LEVELS_{}][NUM_ROWS_{}][NUM_COLS_{}];\n\n'
+                .format(sk_num, sk_num, sk_num, sk_num))
+            sandbox_lines.append("HASH_LEVEL({})\n".format(sk_num))
+            sandbox_lines.append("GET_LEVEL({})\n".format(sk_num))
+        else:
+            sandbox_lines.append(
+                '__declspec(emem export scope(global)) '
+                'int32_t sketch_{}[NUM_ROWS_{}][NUM_COLS_{}];\n\n'
+                .format(sk_num, sk_num, sk_num))
         for r in range(rows):
             sandbox_lines.append("HASH_FUNC{}(index, {}, NUM_COLS_{})\n"
                                  .format(r, sk_num, sk_num))
@@ -148,9 +157,19 @@ def implement_manifest_v3(manifest, sketch_dir):
         sandbox_lines.append('\n')
 
         # Sketch update util
-        sketch_util_lines += [
-            "  row_update_{}_{}(srcAddr, dstAddr);\n".format(sk_num, r)
-            for r in range(rows)]
+        if(sketch_dir == 'univmon'):
+            sketch_util_lines.append(
+                "  uint32_t level_{} = get_level_{}(srcAddr, dstAddr);\n"
+                .format(sk_num, sk_num)
+            )
+            sketch_util_lines += [
+                "  row_update_{}_{}(srcAddr, dstAddr, level_{});\n"
+                .format(sk_num, r, sk_num)
+                for r in range(rows)]
+        else:
+            sketch_util_lines += [
+                "  row_update_{}_{}(srcAddr, dstAddr);\n".format(sk_num, r)
+                for r in range(rows)]
         sk_num += 1
 
     with open(os.path.join(sketch_dir, 'sketch.h'), 'w') as f:
