@@ -141,8 +141,8 @@ def implement_manifest_v3(manifest, sketch_dir):
             sandbox_lines.append("HASH_FUNC{}(index, {}, NUM_COLS_{})\n"
                                  .format(r, sk_num, sk_num))
             if(sketch_dir == 'count-sketch'):
-                sandbox_lines.append("HASH_FUNC{}(filter, {}, NUM_COLS_{})\n"
-                                     .format(r, sk_num, sk_num))
+                sandbox_lines.append("HASH_FUNC{}(filter, {}, 2)\n"
+                                     .format(r, sk_num))
             sandbox_lines.append("UPDATE_ROW({}, {})\n"
                                  .format(sk_num, r))
         sandbox_lines.append('\n')
