@@ -76,7 +76,7 @@ def implement_manifest_v1(manifest):
 
         # P4 file
         p4actions += ["cms_update_{}_{}();".format(sk_num, r)
-                   for r in range(rows)]
+                      for r in range(rows)]
         sk_num += 1
 
 
@@ -109,6 +109,58 @@ def implement_manifest_v1(manifest):
     new_p4.close()
 
 
+def implement_manifest_v3(manifest, sketch_dir):
+    total_thr = manifest['total_thr'] # aggregate thr for device over all flows
+    sandbox_lines = [
+        '#include "sandbox.h"\n\n',
+        '#define LB 0\n',
+        '#define UB 65535\n\n'
+    ]
+    sketch_util_lines = []
+    sk_num = 0
+
+    for sk in manifest['sketches']:
+        # sk.thr is the portion of all packets relevant to sk
+        # different sketches can be updated on the same packet so
+        # sum of sk.thr over all sketches can exceed total_thr
+        rows = sk['rows']
+        cols = sk['cols']
+        prob_update = sk['thr'] * sk['frac'] / total_thr
+        this_range = math.ceil(prob_update * MAX_UB)
+        LB = random.randint(0, MAX_UB - this_range)
+        UB = LB + this_range
+
+        # Sandbox
+        sandbox_lines.append('#define NUM_COLS_{} {}\n'.format(sk_num, cols))
+        sandbox_lines.append('#define NUM_ROWS_{} {}\n\n'.format(sk_num, rows))
+        sandbox_lines.append(
+            '__declspec(emem export scope(global)) '
+            'int32_t sketch_{}[NUM_ROWS_{}][NUM_COLS_{}];\n\n'
+            .format(sk_num, sk_num, sk_num))
+        for r in range(rows):
+            sandbox_lines.append("HASH_FUNC{}({}, NUM_COLS_{})\n"
+                                 .format(r, sk_num, sk_num))
+            sandbox_lines.append("UPDATE_ROW({}, {})\n"
+                                 .format(sk_num, r))
+        sandbox_lines.append('\n')
+
+        # Sketch update util
+        sketch_util_lines += [
+            "  row_update_{}_{}(srcAddr, dstAddr);\n".format(sk_num, r)
+            for r in range(rows)]
+        sk_num += 1
+
+    with open(os.path.join(sketch_dir, 'sketch.h'), 'w') as f:
+        for line in sandbox_lines:
+            f.write(line)
+
+        f.write("__forceinline\n")
+        f.write("void sketch_update_util(uint32_t srcAddr, uint32_t dstAddr) {\n")
+        for line in sketch_util_lines:
+            f.write(line)
+        f.write("}\n")
+
+
 if(__name__ == '__main__'):
     manifest_file = sys.argv[1]
     with open(manifest_file) as f:
@@ -118,6 +170,6 @@ if(__name__ == '__main__'):
         manifest_id = int(sys.argv[2]) - 1
         assert(len(sys.argv) > 3)
         sketch_dir = sys.argv[3]
-        implement_manifest_v2(manifest[manifest_id], sketch_dir)
+        implement_manifest_v3(manifest[manifest_id], sketch_dir)
     else:
         implement_manifest_v1(manifest)
