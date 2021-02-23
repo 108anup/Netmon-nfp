@@ -62,7 +62,7 @@
     return (a & b) % NUM_COLS;                                                 \
   }
 
-#define HASH_FUNC1(NAME, SK_NUM, NUM_COLS)                                     \
+#define HASH_FUNC11(NAME, SK_NUM, NUM_COLS)                                    \
   uint32_t hash_##NAME##_func11_##SK_NUM(uint32_t a, uint32_t b) {             \
     return (a | b) % NUM_COLS;                                                 \
   }

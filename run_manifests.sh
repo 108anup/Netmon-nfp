@@ -22,6 +22,7 @@ mkdir -p "runs/${manifests_file_name}"
 for i in $(seq 1 $num_manifests); do
     python implement_manifest.py $1 $i $2
 
+    touch $sketch_dir/main.p4
     ./build.sh $sketch_dir $me
     ./load.sh $sketch_dir
 
