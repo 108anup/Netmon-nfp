@@ -7,15 +7,94 @@
 #include <pif_common.h>
 #include "pif_plugin.h"
 
-__declspec(cls shared) uint32_t index_a[100] = {25085448, 26371706, 26306928, 11082950, 16257233, 24249164, 23913393, 22322291, 12232351, 28599341, 12863766, 21773806, 20090795, 24452341, 27809432, 1868185, 38536760, 28591158, 20251234, 17790482, 2760755, 35957295, 21302287, 14591986, 6160141, 18328736, 20803970, 3183546, 26331909, 19061217, 1735628, 172089, 14804029, 29473911, 10600365, 23490381, 21727778, 25686083, 31336961, 38602110, 25353970, 34760911, 23254117, 33826242, 21570841, 11331328, 8824534, 22331460, 25696282, 14212368, 2170654, 16061792, 18467312, 15210904, 31901457, 24344927, 13584611, 14092110, 22096063, 27971323, 12343060, 17672426, 31041797, 14549970, 28337825, 6303500, 5461407, 334334, 29090866, 1697779, 24714480, 6900730, 23914598, 39361342, 28430051, 32772731, 5666631, 7997095, 8401327, 9733658, 37400920, 23816223, 38499765, 5711703, 31908845};
+#define HASH_FUNC0(SK_NUM, NUM_COLS)                        \
+    uint32_t hash_func0_##SK_NUM(uint32_t a, uint32_t b)    \
+    {                                                       \
+        return a % NUM_COLS;                                \
+    }                                                       \
 
-__declspec(cls shared) uint32_t index_b[100] = {7977416, 26521849, 23928002, 5650086, 27256962, 25567821, 21372645, 13901931, 16414653, 4162211, 11940106, 21479132, 17294823, 22293892, 26994091, 37708534, 25798880, 35688053, 25984157, 5632978, 21509546, 21936907, 39170800, 32566126, 34335890, 11290146, 17407470, 30474195, 22843448, 32308258, 24745825, 26679090, 22912091, 4771631, 35938117, 18449300, 35465525, 5467154, 8122148, 29617392, 24472611, 7470620, 2044408, 21841775, 157755, 17682032, 33950155, 37875779, 3453372, 30342338, 7866920, 31787020, 28179227, 13632985, 17746559, 31374862, 9453629, 4735466, 3513314, 24446624, 30183506, 27048920, 19216283, 33512553, 15204124, 7479030, 23035105, 14317370, 23782476, 8518427, 586577, 3056333, 20476350, 1361315, 22888486, 24025638, 26277431, 35159039, 28385493, 18937297, 30975576, 16436357, 27294132, 18008324, 7769053};
 
-__declspec(cls shared) uint32_t p = 39916801;
-int compute_hash(uint32_t x, uint32_t range, uint32_t aParam, uint32_t bParam)
-{
-  return ((aParam * x + bParam) % p) % range;
-}
+#define HASH_FUNC1(SK_NUM, NUM_COLS)                        \
+    uint32_t hash_func1_##SK_NUM(uint32_t a, uint32_t b)    \
+    {                                                       \
+        return b % NUM_COLS;                                \
+    }                                                       \
+
+
+#define HASH_FUNC2(SK_NUM, NUM_COLS)                        \
+    uint32_t hash_func2_##SK_NUM(uint32_t a, uint32_t b)    \
+    {                                                       \
+        return (a & b) % NUM_COLS;                          \
+    }                                                       \
+
+
+#define HASH_FUNC3(SK_NUM, NUM_COLS)                        \
+    uint32_t hash_func3_##SK_NUM(uint32_t a, uint32_t b)    \
+    {                                                       \
+        return (a | b) % NUM_COLS;                          \
+    }                                                       \
+
+#define HASH_FUNC4(SK_NUM, NUM_COLS)                        \
+    uint32_t hash_func4_##SK_NUM(uint32_t a, uint32_t b)    \
+    {                                                       \
+        return a % NUM_COLS;                                \
+    }                                                       \
+
+
+#define HASH_FUNC5(SK_NUM, NUM_COLS)                        \
+    uint32_t hash_func5_##SK_NUM(uint32_t a, uint32_t b)    \
+    {                                                       \
+        return b % NUM_COLS;                                \
+    }                                                       \
+
+
+#define HASH_FUNC6(SK_NUM, NUM_COLS)                        \
+    uint32_t hash_func6_##SK_NUM(uint32_t a, uint32_t b)    \
+    {                                                       \
+        return (a & b) % NUM_COLS;                          \
+    }                                                       \
+
+
+#define HASH_FUNC7(SK_NUM, NUM_COLS)                        \
+    uint32_t hash_func7_##SK_NUM(uint32_t a, uint32_t b)    \
+    {                                                       \
+        return (a | b) % NUM_COLS;                          \
+    }                                                       \
+
+#define HASH_FUNC8(SK_NUM, NUM_COLS)                        \
+    uint32_t hash_func8_##SK_NUM(uint32_t a, uint32_t b)    \
+    {                                                       \
+        return a % NUM_COLS;                                \
+    }                                                       \
+
+
+#define HASH_FUNC9(SK_NUM, NUM_COLS)                        \
+    uint32_t hash_func9_##SK_NUM(uint32_t a, uint32_t b)    \
+    {                                                       \
+        return b % NUM_COLS;                                \
+    }                                                       \
+
+
+#define HASH_FUNC10(SK_NUM, NUM_COLS)                       \
+    uint32_t hash_func10_##SK_NUM(uint32_t a, uint32_t b)   \
+    {                                                       \
+        return (a & b) % NUM_COLS;                          \
+    }                                                       \
+
+
+#define HASH_FUNC11(SK_NUM, NUM_COLS)                       \
+    uint32_t hash_func11_##SK_NUM(uint32_t a, uint32_t b)   \
+    {                                                       \
+        return (a | b) % NUM_COLS;                          \
+    }
+
+#define UPDATE_ROW(SK_NUM, ROW_NUM)                                 \
+  __forceinline void row_update_##SK_NUM##_##ROW_NUM(uint32_t srcAddr,   \
+                                           uint32_t dstAddr) {      \
+    uint32_t hv = hash_func##ROW_NUM##_##SK_NUM(srcAddr, dstAddr);  \
+    atomic_add(&sketch_##SK_NUM[ROW_NUM][hv], 1);                   \
+  }                                                                 \
+
 
 __intrinsic void
 atomic_add(volatile __declspec(mem addr40) void  *addr, int x)
@@ -37,6 +116,28 @@ atomic_add(volatile __declspec(mem addr40) void  *addr, int x)
                 ctx_swap[my_signal];
         }
     }
+}
+
+__intrinsic void
+atomic_sub(volatile __declspec(mem addr40) void  *addr, int x)
+{
+  unsigned int addr_hi, addr_lo;
+  __declspec(write_reg) int xfer;
+  SIGNAL my_signal;
+  addr_hi = ((unsigned long long int)addr >> 8) & 0xff000000;
+  addr_lo = (unsigned long long int)addr & 0xffffffff;
+
+  if (__is_ct_const(x) && x == 1) {
+    __asm {
+      mem[decr, --, addr_hi, <<8, addr_lo, 1];
+    }
+  } else {
+    xfer = x;
+    __asm {
+      mem[sub, xfer, addr_hi, <<8, addr_lo, 1],   \
+        ctx_swap[my_signal];
+    }
+  }
 }
 
 #endif // SANDBOX_H

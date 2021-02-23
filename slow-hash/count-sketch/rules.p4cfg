@@ -1,0 +1,98 @@
+{
+    "tables": {
+        "forward": {
+            "rules": [
+                {
+                    "action": {
+                        "data": {
+                            "espec": {
+                                "value": "v0.0"
+                            }
+                        },
+                        "type": "do_forward"
+                    },
+                    "name": "p0_to_v0",
+                    "match": {
+                        "tcp.dstPort": {
+                            "value": "1000"
+                        },
+                        "standard_metadata.ingress_port": {
+                            "value": "p0"
+                        }
+                    }
+                },
+                {
+                    "action": {
+                        "data": {
+                            "espec": {
+                                "value": "v0.1"
+                            }
+                        },
+                        "type": "do_forward"
+                    },
+                    "name": "p0_to_v1",
+                    "match": {
+                        "tcp.dstPort": {
+                            "value": "1001"
+                        },
+                        "standard_metadata.ingress_port": {
+                            "value": "p0"
+                        }
+                    }
+                },
+                {
+                    "action": {
+                        "data": {
+                            "espec": {
+                                "value": "v0.2"
+                            }
+                        },
+                        "type": "do_forward"
+                    },
+                    "name": "p0_to_v2",
+                    "match": {
+                        "tcp.dstPort": {
+                            "value": "1002"
+                        },
+                        "standard_metadata.ingress_port": {
+                            "value": "p0"
+                        }
+                    }
+                },
+                {
+                    "action": {
+                        "data": {
+                            "espec": {
+                                "value": "v0.3"
+                            }
+                        },
+                        "type": "do_forward"
+                    },
+                    "name": "p0_to_v3",
+                    "match": {
+                        "tcp.dstPort": {
+                            "value": "1003"
+                        },
+                        "standard_metadata.ingress_port": {
+                            "value": "p0"
+                        }
+                    }
+                }
+            ],
+            "default_rule": {
+                "action": {
+                    "type": "drop_act"
+                },
+                "name": "default"
+            }
+        },
+        "sketch_table": {
+            "default_rule": {
+                "action": {
+                    "type": "sketch_action"
+                },
+                "name": "default"
+            }
+        }
+    }
+}
