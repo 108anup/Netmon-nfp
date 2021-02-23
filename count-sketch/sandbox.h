@@ -71,7 +71,12 @@
   __forceinline void row_update_##SK_NUM##_##ROW_NUM(uint32_t srcAddr,         \
                                                      uint32_t dstAddr) {       \
     uint32_t hv = hash_index_func##ROW_NUM##_##SK_NUM(srcAddr, dstAddr);       \
-    atomic_add(&sketch_##SK_NUM[ROW_NUM][hv], 1);                              \
+    uint32_t filter = hash_filter_func##ROW_NUM##_##SK_NUM(srcAddr, dstAddr);  \
+    if (filter == 1) {                                                         \
+      atomic_add(&sketch_##SK_NUM[ROW_NUM][hv], 1);                            \
+    } else {                                                                   \
+      atomic_sub(&sketch_##SK_NUM[ROW_NUM][hv], 1);                            \
+    }                                                                          \
   }
 
 __intrinsic void

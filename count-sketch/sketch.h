@@ -9,8 +9,10 @@
 __declspec(emem export scope(global)) int32_t sketch_0[NUM_ROWS_0][NUM_COLS_0];
 
 HASH_FUNC0(index, 0, NUM_COLS_0)
+HASH_FUNC0(filter, 0, 2)
 UPDATE_ROW(0, 0)
 HASH_FUNC1(index, 0, NUM_COLS_0)
+HASH_FUNC1(filter, 0, 2)
 UPDATE_ROW(0, 1)
 
 __forceinline
