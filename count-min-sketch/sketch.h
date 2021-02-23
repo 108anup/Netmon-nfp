@@ -1,7 +1,7 @@
 #include "sandbox.h"
 
-#define NUM_COLS_0 4194304
-#define NUM_ROWS_0 8
+#define NUM_COLS_0 4
+#define NUM_ROWS_0 4
 
 #define LB 0
 #define UB 65535
