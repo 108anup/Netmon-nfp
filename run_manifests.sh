@@ -20,9 +20,12 @@ sketch_dir=$2
 mkdir -p "runs/${manifests_file_name}"
 
 for i in $(seq 1 $num_manifests); do
+    echo "Implementing manifest number $i"
     python implement_manifest.py $1 $i $2
 
     touch $sketch_dir/main.p4
+
+    echo "Building manifest number $i"
     ./build.sh $sketch_dir $me
     ./load.sh $sketch_dir
 
