@@ -35,11 +35,17 @@ for num, manifest in enumerate(manifests):
         name = manifests_file_name + "_{}.log".format(num+1)
         rate = int(get_rate(os.path.join(ground_truth_path, name)))
         manifest['ground_truth_ns'] = rate
-
+        
         # CSV print for modeling
-        print("{}, {}, {}".format(manifest['sketches'][0]['rows'],
-                                  manifest['sketches'][0]['cols'],
-                                  manifest['ground_truth_ns']))
+        if('levels' in manifest['sketches'][0]):
+            print("{}, {}, {}, {}".format(manifest['sketches'][0]['rows'],
+                                          manifest['sketches'][0]['cols'],
+                                          manifest['sketches'][0]['levels'],
+                                          manifest['ground_truth_ns']))
+        else:
+            print("{}, {}, {}".format(manifest['sketches'][0]['rows'],
+                                      manifest['sketches'][0]['cols'],
+                                      manifest['ground_truth_ns']))
     except:
         pass
     idx += 1
