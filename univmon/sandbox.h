@@ -85,7 +85,7 @@
 #define GET_LEVEL(SK_NUM)                                                      \
   uint32_t get_level_##SK_NUM(uint32_t srcAddr, uint32_t dstAddr) {            \
     uint32_t level_hash = hash_level_func_##SK_NUM(srcAddr, dstAddr);          \
-    uint32_t level = 0;                                                        \
+    uint32_t level = NUM_LEVELS_##SK_NUM - 1;				       \
     uint32_t i;                                                                \
     for (i = 0; i < NUM_LEVELS_##SK_NUM; i++) {                                \
       if (level_hash & 1 == 0) {                                               \

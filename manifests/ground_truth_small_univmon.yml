@@ -187,3 +187,66 @@
     rows: 9
     thr: 1
   total_thr: 1
+- sketches:
+  - cols: 65536
+    frac: 1
+    levels: 4
+    rows: 3
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 65536
+    frac: 1
+    levels: 8
+    rows: 3
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 65536
+    frac: 1
+    levels: 16
+    rows: 3
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 65536
+    frac: 1
+    levels: 4
+    rows: 6
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 65536
+    frac: 1
+    levels: 8
+    rows: 6
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 65536
+    frac: 1
+    levels: 16
+    rows: 6
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 65536
+    frac: 1
+    levels: 4
+    rows: 9
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 65536
+    frac: 1
+    levels: 8
+    rows: 9
+    thr: 1
+  total_thr: 1
+- sketches:
+  - cols: 65536
+    frac: 1
+    levels: 16
+    rows: 9
+    thr: 1
+  total_thr: 1

@@ -80,7 +80,7 @@ ground_truth_small = [
         'total_thr': 1
     }
     for r in [3, 6, 9]
-    for logc in range(2, 7, 2)
+    for logc in range(2, 10, 2)
     for l in [4, 8, 16]
 ]
 
