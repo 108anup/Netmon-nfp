@@ -73,13 +73,15 @@ ground_truth_small = [
                 'rows': r,
                 'cols': 4**logc,
                 'thr': 1,
-                'frac': 1
+                'frac': 1,
+                'levels': l
             }
         ],
         'total_thr': 1
     }
     for r in [3, 6, 9]
-    for logc in range(2, 12, 2)
+    for logc in range(2, 7, 2)
+    for l in [4, 8, 16]
 ]
 
 

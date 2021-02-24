@@ -134,7 +134,7 @@ def implement_manifest_v3(manifest, sketch_dir):
         sandbox_lines.append('#define NUM_COLS_{} {}\n'.format(sk_num, cols))
         sandbox_lines.append('#define NUM_ROWS_{} {}\n\n'.format(sk_num, rows))
         if(sketch_dir == 'univmon'):
-            sandbox_lines.append('#define NUM_LEVELS_{} {}\n\n'.format(sk_num, rows))
+            sandbox_lines.append('#define NUM_LEVELS_{} {}\n\n'.format(sk_num, sk['levels']))
             sandbox_lines.append(
                 '__declspec(emem export scope(global)) '
                 'int32_t sketch_{}[NUM_LEVELS_{}][NUM_ROWS_{}][NUM_COLS_{}];\n\n'
@@ -149,7 +149,7 @@ def implement_manifest_v3(manifest, sketch_dir):
         for r in range(rows):
             sandbox_lines.append("HASH_FUNC{}(index, {}, NUM_COLS_{})\n"
                                  .format(r, sk_num, sk_num))
-            if(sketch_dir == 'count-sketch'):
+            if(sketch_dir == 'count-sketch' or sketch_dir == 'univmon'):
                 sandbox_lines.append("HASH_FUNC{}(filter, {}, 2)\n"
                                      .format(r, sk_num))
             sandbox_lines.append("UPDATE_ROW({}, {})\n"
