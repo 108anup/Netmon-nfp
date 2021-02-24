@@ -1,0 +1,7 @@
+- sketches:
+  - cols: 65536
+    frac: 1
+    levels: 16
+    rows: 9
+    thr: 1
+  total_thr: 1

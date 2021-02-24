@@ -88,7 +88,7 @@
     uint32_t level = NUM_LEVELS_##SK_NUM - 1;				       \
     uint32_t i;                                                                \
     for (i = 0; i < NUM_LEVELS_##SK_NUM; i++) {                                \
-      if (level_hash & 1 == 0) {                                               \
+      if ((level_hash & 1) == 0) {					\
         level = i;                                                             \
         break;                                                                 \
       }                                                                        \
